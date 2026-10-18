@@ -1,0 +1,70 @@
+@Web_Api_HostAddress = http://localhost:5292
+
+### Comprobar que la API funciona
+GET {{Web_Api_HostAddress}}/
+
+### ---------- CURSOS ----------
+POST {{Web_Api_HostAddress}}/api/Cursos
+Content-Type: application/json
+
+{
+  "nombre": "Desarrollo Web"
+}
+
+###
+GET {{Web_Api_HostAddress}}/api/Cursos
+
+### ---------- ESTUDIANTES ----------
+POST {{Web_Api_HostAddress}}/api/Estudiantes
+Content-Type: application/json
+
+{
+  "nombres": "Ana",
+  "apellidos": "Lopez",
+  "direccion": "Zona 1"
+}
+
+###
+GET {{Web_Api_HostAddress}}/api/Estudiantes
+
+### ---------- DOCENTES ----------
+POST {{Web_Api_HostAddress}}/api/Docentes
+Content-Type: application/json
+
+{
+  "nombres": "Carlos",
+  "apellidos": "Perez"
+}
+
+###
+GET {{Web_Api_HostAddress}}/api/Docentes
+
+### ---------- ASIGNACIONES ----------
+POST {{Web_Api_HostAddress}}/api/Asignaciones
+Content-Type: application/json
+
+{
+  "estudianteId": 1,
+  "cursoId": 1,
+  "docenteId": 1
+}
+
+###
+GET {{Web_Api_HostAddress}}/api/Asignaciones
+
+###
+GET {{Web_Api_HostAddress}}/api/Asignaciones/1
+
+### Modificar una asignación
+PUT {{Web_Api_HostAddress}}/api/Asignaciones/1
+Content-Type: application/json
+
+{
+  "asignacionId": 1,
+  "estudianteId": 1,
+  "cursoId": 1,
+  "docenteId": 1
+}
+
+### Eliminar una asignación
+DELETE {{Web_Api_HostAddress}}/api/Asignaciones/1
